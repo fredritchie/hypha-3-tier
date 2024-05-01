@@ -6,7 +6,7 @@ sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/
 sudo apt-get update
 
 # Install Node.js and npm
-sudo apt-get install -y nodejs 
+sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 
 # Install PM2
@@ -45,7 +45,7 @@ sudo wget -O /var/www/html/app.js https://raw.githubusercontent.com/fredritchie/
 
 # Install Express.js dependencies
 npm install express
-npm install aws-sdk 
+npm install aws-sdk
 # Run the Express.js app using PM2
 pm2 start /var/www/html/app.js
 
