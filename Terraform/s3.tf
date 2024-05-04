@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "static_website_bucket" {
-  bucket = "my-tf-hypha-ritchie-bucket"
+  bucket = var.static_website_bucket_name
 }
 
 resource "aws_s3_bucket_ownership_controls" "static_website_bucket" {
