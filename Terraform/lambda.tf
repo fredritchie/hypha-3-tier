@@ -11,6 +11,10 @@ resource "aws_lambda_function" "form" {
   function_name = "form"
   role          = aws_iam_role.lambda_role.arn
   handler       = "lambda-function.lambda_handler"
-
   runtime = "python3.12"
+    vpc_config {
+    # Every subnet should be able to reach an EFS mount target in the same Availability Zone. Cross-AZ mounts are not permitted.
+    subnet_ids         = [aws_subnet.subnet-public-1.id, aws_subnet.subnet-public-2.id]
+    security_group_ids = [aws_security_group.lambda-SG.id]
+  }
 }

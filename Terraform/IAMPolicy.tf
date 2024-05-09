@@ -7,6 +7,15 @@ resource "aws_iam_policy" "policy_for_lambda" {
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
+       {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
       {
         "Effect" : "Allow",
         "Action" : [
@@ -18,7 +27,7 @@ resource "aws_iam_policy" "policy_for_lambda" {
           "dynamodb:PutItem",
           "dynamodb:UpdateItem"
         ],
-        "Resource" : "arn:aws:dynamodb:*:*:table/webapp"
+        "Resource" : aws_dynamodb_table.webapp.arn
       },
       {
         "Effect" : "Allow",
