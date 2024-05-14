@@ -47,7 +47,7 @@ jobs:
 
     - name: Create CodeDeploy Deployment
       run: |
-        aws deploy create-deployment --application-name YOUR_APPLICATION_NAME --deployment-group YOUR_DEPLOYMENT_GROUP_NAME --s3-location bucket=${{ secrets.AWS_S3_BUCKET }},key=app.zip,bundleType=zip
+        aws deploy create-deployment --application-name hypha-webapp --deployment-group webapp --s3-location bucket=${{ secrets.AWS_S3_BUCKET }},key=app.zip,bundleType=zip
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
