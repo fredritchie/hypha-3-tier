@@ -39,5 +39,5 @@ jobs:
     - name: Upload to S3
       run: aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --delete
     - name: Deploying to Ec2 
-      run: aws deploy create-deployment --application-name webapp --deployment-group-name CodeDeployWebapp --github-location repository=$GITHUB_REPOSITORY,commitId=$commit_hash --ignore-application-stop-failures
+      run: aws deploy create-deployment --application-name webapp --deployment-group-name CodeDeployWebapp --github-location repository=${{ github.repository }},commitId=$GITHUB_RUN_ID --ignore-application-stop-failures
 
