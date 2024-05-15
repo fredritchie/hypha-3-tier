@@ -33,7 +33,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: <your-region> # Replace <your-region> with your AWS region
+        aws-region: ap-south-1 # Replace <your-region> with your AWS region
 
     # Post the package to S3 bucket
     - name: Upload to S3
