@@ -94,7 +94,7 @@ app.get('/', (req, res) => {
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Hypha DevOps Cohorts</h1>
+      <h1>Welcome to Hypha DevOps Solutions Architect Cohorts</h1>
       <h2>Enter your name here</h2>
       <form id="userForm">
         <label for="firstName">First Name:</label>
